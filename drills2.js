@@ -20,3 +20,29 @@ function beyond (num){
     }
 }
 console.log (beyond (-6));
+
+function decode(word) {
+    if (word[0] === 'a') {
+        return word[1];
+    }
+    else if (word[0] === 'b') {
+        return word[2];
+    }
+    else if (word[0] === 'c') {
+        return word[3];
+    }
+    else if (word[0] === 'd') {
+        return word[4];
+    }
+    else {
+        return " ";
+    }
+}
+console.log(decode('craft'));
+console.log(decode('block'));
+console.log(decode('argon'));
+console.log(decode('meter'));
+console.log(decode('bells'));
+console.log(decode('brown'));
+console.log(decode('croon'));
+console.log(decode('droop'));
