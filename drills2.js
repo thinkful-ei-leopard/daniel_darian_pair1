@@ -46,3 +46,37 @@ console.log(decode('bells'));
 console.log(decode('brown'));
 console.log(decode('croon'));
 console.log(decode('droop'));
+
+function howManyDays (month, leapYear) {
+    switch (month) {
+    case 'January' :
+    case 'March' : 
+    case 'May' :
+    case 'July' :
+    case 'August' :
+    case 'October' :
+    case 'December' :   
+        result = `${month} has 31 days`;
+        break;
+    }   
+    switch (month) {
+    case 'April' :
+    case 'June' :
+    case 'September' :
+    case 'November' :
+        result = `${month} has 30 days`
+        break;
+    }
+    switch (month) {
+    case 'February'
+    if (leapYear === true){
+        result = 'February has 29 days'
+    }
+    else {
+         'February has 28 days'
+        result = 'February has 28 days'
+        break; 
+    }  
+}
+}
+console.log ( howManyDays('January'));                       
