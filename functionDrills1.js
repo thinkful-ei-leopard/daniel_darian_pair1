@@ -1,6 +1,14 @@
 function createGreeting (name, age) {
-    const yearOfBirth = (2020-age);
-    return `Hi, my name is ${name} and I am ${age}. I was born in ${yearOfBirth}`;
+    if (name === undefined || age === undefined) {
+        throw new Error('Arguments not valid');
+    }
+    else if (typeof name !== "string") {
+        throw new TypeError('Name must be a string');
+    }
+    else if (typeof age !== "number") {
+        throw new TypeError('Age must be a number');
+    }
+    return `Hi, my name is ${name} and I am ${age}. I was born in ${getYearofBirth()}`;
 }
 let greeting1 = createGreeting("Daniel", 27);
 console.log(greeting1);
