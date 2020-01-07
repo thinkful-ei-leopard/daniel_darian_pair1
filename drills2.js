@@ -47,9 +47,8 @@ console.log(decode('brown'));
 console.log(decode('croon'));
 console.log(decode('droop'));
 
-
-function howManyDays (month, leapYear)
-    switch (month) {
+function daysInMonth(month, leapYear) {
+switch (month) {
     case 'January' :
     case 'March' : 
     case 'May' :
@@ -57,24 +56,39 @@ function howManyDays (month, leapYear)
     case 'August' :
     case 'October' :
     case 'December' :   
-        result = `${month} has 31 days`;
+        result = 31;
         break;
     case 'April' :
     case 'June' :
     case 'September' :
     case 'November' :
-        result = `${month} has 30 days`;
+        result = 30;
         break;
     case 'February' :
     if (leapYear === true)
-        result = 'February has 29 days'
+        result = 29;
     else 
-        result = 'February has 28 days'
+        result = 28;
         break; 
     default:
-        System.out.println("Invalid month.");
-        break;
+        result = "Not a valid Month";
+    
+}    
+  return `${month} has ${result} days`;   
 }
-    System.out.println(result);
+console.log(daysInMonth('February', true));
 
-console.log( howManyDays('January'));                       
+function rps(num) {
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    if (num === randomNo) {
+        return "Tie";
+    }
+    else if ((num===1 && randomNo===2) || (num===2 && randomNo===3) || (num===3 && randomNo===1)) {
+        return "You Lose";
+    }
+    else {
+        return "You Win!";
+    }
+}
+console.log(rps(3));
+

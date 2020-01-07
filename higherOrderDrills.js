@@ -1,4 +1,4 @@
-/*function repeat(fn, n) {
+function repeat(fn, n) {
     for (let i=0; i<n; i++) {
        return fn;
     }
@@ -57,25 +57,45 @@ mudSlideWarning('Everywhere');
 rocksWarning('IDK');
 avalancheWarning('Steamboat');
 avalancheWarning('Vail');
-avalancheWarning('Loveland Pass');*/
+avalancheWarning('Loveland Pass');
 
 let turtleSpeed = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
 function onwards(arr) {
-    for (let i=0; i<arr.length; i++) {
-        let movement = arr[i];
-        newArray = arr.filter(arr => (movement[0] > 0));
-    }
-    return newArray;
+    return arr.filter((e) => {
+      return e[0] < 0 || e[1] < 0;
+    });
 }
+
 console.log(onwards(turtleSpeed));
 
 function totalSteps(arr) {
- let newArr = [];
- newArr = arr.map(absoluteValue(arr));
- return newArr;
+    return arr.map((e) => {
+        return Math.abs(e[0]) + Math.abs(e[1]);
+    });
 }
-function absoluteValue(arr) {
-    let value = Math.abs(arr[0]) + Math.abs(arr[1]);
-    return value;
+console.log(totalSteps(turtleSpeed));
+let stepArray = totalSteps(turtleSpeed);
+function stepsMovements(arr) {
+    return arr.forEach(function (currentElement, currentIndex)  {
+        return console.log(`Movement #${currentIndex}: ${currentElement} steps.`);
+    });
 }
-console.log(totalSteps([0, 1, 2]));
+console.log(stepsMovements(stepArray));
+
+function reduceDecoder(str) {
+    let array = str.split(" ");
+    let initialValue= "";
+    return array.reduce(myFunc, initialValue);
+ }
+ 
+ function myFunc(result, current) {
+     if (current.length===3) {
+         return result + " ";
+     }
+     else {
+         return result + current[current.length-1].toUpperCase();
+     }
+ }
+ 
+ console.log(reduceDecoder('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
