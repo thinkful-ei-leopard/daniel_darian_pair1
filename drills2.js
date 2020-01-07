@@ -47,3 +47,34 @@ console.log(decode('brown'));
 console.log(decode('croon'));
 console.log(decode('droop'));
 
+
+function howManyDays (month, leapYear)
+    switch (month) {
+    case 'January' :
+    case 'March' : 
+    case 'May' :
+    case 'July' :
+    case 'August' :
+    case 'October' :
+    case 'December' :   
+        result = `${month} has 31 days`;
+        break;
+    case 'April' :
+    case 'June' :
+    case 'September' :
+    case 'November' :
+        result = `${month} has 30 days`;
+        break;
+    case 'February' :
+    if (leapYear === true)
+        result = 'February has 29 days'
+    else 
+        result = 'February has 28 days'
+        break; 
+    default:
+        System.out.println("Invalid month.");
+        break;
+}
+    System.out.println(result);
+
+console.log( howManyDays('January'));                       
